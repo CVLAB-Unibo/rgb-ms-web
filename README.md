@@ -1,1 +1,1 @@
-# Website for "Open Challenges in Deep Stereo: the Booster Dataset"
+# Website for "RGB-Multispectral Matching <br> Dataset, Learning Methodology, Evaluation"
