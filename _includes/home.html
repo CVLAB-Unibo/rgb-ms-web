@@ -1,0 +1,153 @@
+<style>
+    model-viewer {
+      width: 1200px;
+      height: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .responsive {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .row_imgs {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create two equal columns that sits next to each other */
+    .col_imgs {
+    flex: 23%;
+    padding: 0 4px;
+    }
+
+    .col_imgs img {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    vertical-align: middle;
+    }
+
+</style>
+
+
+
+<section class="hero has-text-centered has-background-white" id="dataset">
+    <div class="hero-body">
+        <div class="container">
+            <h2 align="centered" class="title">GROUND TRUTH ACQUISITION</h2>
+            <br>
+            <div class="row_imgs">
+                <div class="col_imgs">
+                    <center> RGB - 4112x3008 </center>
+                    <center> Active Stereo </center>
+                    <img src="assets/4_0/left_active.jpg">
+                    <center> RGB - 4112x3008 </center>
+                    <center> Passive </center>
+                    <img src="assets/4_0/left.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> 2nd RGB - 4112x3008 </center>
+                    <center> Active Stereo </center>
+                    <img src="assets/4_0/right_active.jpg">
+                    <center> RGB - 3222x1605 </center>
+                    <center> Passive Warped </center>
+                    <img src="assets/4_0/left2.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> GT Depth - 4112x3008 </center>
+                    <br>
+                    <img src="assets/4_0/00-02_col.png">
+                    <center> GT Depth Warped - 3222x1605 </center>
+                    <br>
+                    <img src="assets/4_0/00-01.png">
+                </div>                    
+            </div> 
+            Given a set of active RGB-RGB stereo pairs, we compute the ground-truth disparity aligned with the left image of the RGB-RGB stereo system
+            with our space-time stereo algorithm. Then, we warp it to be aligned with the left image of the RGB-MS stereo system.
+        </div> 
+    </div>        
+</section>
+
+<section class="hero has-text-centered has-background-white" id="dataset_samples">
+    <div class="hero-body">
+        <div class="container">
+            <h2 align="centered" class="title">DATASET EXAMPLES</h2>
+            <br>
+            <div class="row_imgs">
+                <div class="col_imgs">
+                    <center> RGB - 3222x1605 </center>
+                    <br>
+                    <img src="assets/dataset/4_3/rgb.jpg">
+                    <img src="assets/dataset/6_1/rgb.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center>MS - 510x254 </center>
+                    <center>10 visible spectrum wavelengths</center> 
+                    <img src="assets/dataset/4_3/ms_pad.jpg">
+                    <img src="assets/dataset/6_1/ms_pad.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center> Depth - 3222x1605 </center>
+                    <br>
+                    <img src="assets/dataset/4_3/00-01_col.png">
+                    <img src="assets/dataset/6_1/00-01_col.png">
+                </div>
+                <div class="col_imgs">
+                    <center> Point Cloud </center>
+                    <img src="assets/dataset/4_3/pcl.jpg">
+                    <img src="assets/dataset/6_1/pcl.jpg">
+                </div>
+            </div> 
+        </div> 
+    </div>        
+</section>
+
+
+<section class="hero has-text-centered has-background-white" id="network">
+    <div class="hero-body">
+        <div class="container">
+            <h2 align="centered" class="title">NETWORK</h2>
+            <br>
+            <img src="assets/network.jpg">
+            Given an unbalanced stereo pair composed of a reference high-resolution image L and a target multi-spectral low-resolution image R, our network estimates a disparity map aligned with L by combining cross-spectral cost probabilities computed by a stereo backbone and deep features from L obtained by the feature extractor.
+        </div> 
+    </div>        
+</section>
+
+
+<section class="hero has-text-centered has-background-white" id="dataset_samples">
+    <div class="hero-body">
+        <div class="container">
+            <h2 align="centered" class="title">QUALITATIVE RESULTS</h2>
+            <br>
+            <div class="row_imgs">
+                <div class="col_imgs">
+                    <center> RGB - 3222x1605 </center>
+                    <center> Diff. Light Conditions </center>
+                    <img src="assets/4_1/left_01.jpg">
+                    <img src="assets/4_1/left1_2.jpg">
+                </div>
+                <div class="col_imgs">
+                    <center>MS - 510x254 </center>
+                    <center>10 visible spectrum wavelengths</center> 
+                    <img src="assets/4_1/right_01_pad.png">
+                    <img src="assets/4_1/right_01_2_pad.png">
+                </div>
+                <div class="col_imgs">
+                    <center> GT Depth - 3222x1605 </center>
+                    <br>
+                    <img src="assets/4_1/00-01_col.png">
+                    <img src="assets/4_1/pcl1_x2.png">
+                </div>
+                <div class="col_imgs">
+                    <center> Network Preds - 3222x1605  </center>
+                    <br>
+                    <img src="assets/4_1/psm_hr_synth.png">
+                    <img src="assets/4_1/psm_hr_synth_1.png">
+                </div>
+            </div> 
+        </div> 
+    </div>        
+</section>
